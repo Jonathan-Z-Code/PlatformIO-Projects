@@ -1,0 +1,39 @@
+    //if(updateFlag == true) { 
+      #if DBG_TIME_ELAPSED
+      //Serial.print(bitCount);
+      //Serial.print(",");
+      //Serial.println(deltaTime);
+      #endif
+      /*
+      // if preamble length is not long enough, reset parameters (error)
+      if(bitCount == 1 && deltaTime < MIN_PREAMBLE_TIME) {
+        errorHandler();
+      }
+      // if preamble is long enough, but the data bits are too short (error in reception) (error)
+      if(deltaTime < MIN_LOGIC0_TIME) {
+        errorHandler();
+      }
+      // if data passes the two sanity checks, update the array (if bitCount is != 0)
+      if(bitCount > 0) {
+        (deltaTime < LOGIC1_THRESHOLD) ?  irData[bitCount-1] = 0 : irData[bitCount-1] = 1;
+      }
+      // if bitCount is 12, then you have successfully recieved a legit packet of data
+      if(bitCount == SONY_PACKET_SIZE) {
+        uint16_t bitMask = 0x0001;
+        uint16_t result = 0;
+        bitCount = 0;
+        preamble = true;
+        // skip preamble bit in message decoding calculations
+        for(int i = 1 ; i < SONY_PACKET_SIZE ; i++) {
+          Serial.print(irData[i]); // show binary value of raw IR data packet (LSB first)
+          if(irData[i]) result |= bitMask;  // variable "result" will be in MSB format (right-aligned)
+          else result &= ~bitMask;
+          bitMask <<= 1;
+        }
+        Serial.print("\n");
+        Serial.println("raw msg data: ");
+        Serial.println(result, HEX);
+      }
+      updateFlag = false;
+    }
+    */
